@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 # Load dataset (for feature scaling)
-file_path = "C:/Users/defaultuser0/OneDrive/Desktop/Flood prediction/flood/flood.csv"
+file_path = "flood.csv"
 df = pd.read_csv(file_path)
 X = df.drop(columns=["FloodProbability"])
 
