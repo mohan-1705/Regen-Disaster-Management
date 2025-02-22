@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisasterCoord - Relief Coordination</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>DisasterCoord</h1>
+        <nav>
+            <button onclick="showSection('updates')">Live Updates</button>
+            <button onclick="showSection('resources')">Resources</button>
+            <button onclick="showSection('alerts')">Alerts</button>
+            <button onclick="showSection('volunteers')">Volunteers</button>
+            <button onclick="showSection('map')">Map</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Live Updates Section -->
+        <section id="updates" class="active">
+            <h2>Live Updates</h2>
+            <div id="updates-feed"></div>
+        </section>
+
+        <!-- Resource Allocation Section -->
+        <section id="resources">
+            <h2>Resource Allocation</h2>
+            <div id="resources-list"></div>
+            <form id="resource-form">
+                <input type="text" id="resource-name" placeholder="Resource Name" required>
+                <input type="number" id="resource-quantity" placeholder="Quantity" required>
+                <button type="submit">Add Resource</button>
+            </form>
+        </section>
+
+        <!-- Emergency Alerts Section -->
+        <section id="alerts">
+            <h2>Emergency Alerts</h2>
+            <div id="alerts-list"></div>
+            <button onclick="triggerAlert()">Simulate Emergency Alert</button>
+        </section>
+
+        <!-- Volunteer Sign-Up Section -->
+        <section id="volunteers">
+            <h2>Volunteer Sign-Up</h2>
+            <form id="volunteer-form">
+                <input type="text" id="volunteer-name" placeholder="Full Name" required>
+                <input type="email" id="volunteer-email" placeholder="Email" required>
+                <input type="text" id="volunteer-skills" placeholder="Skills (e.g., Medical, Logistics)" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <h3>Registered Volunteers</h3>
+            <div id="volunteers-list"></div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map">
+            <h2>Location Awareness Map</h2>
+            <div id="map-container" style="height: 500px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 DisasterCoord by xAI</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
